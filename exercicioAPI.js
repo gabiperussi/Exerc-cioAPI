@@ -1,16 +1,15 @@
-// 1. Buscar Usuários (Console)
+// 1. 
 async function buscarUsuarios() {
     const resposta = await fetch("https://jsonplaceholder.typicode.com/users");
     const dados = await resposta.json();
     
-    // Mostrando apenas Nome e Email no console
+
     dados.forEach(user => {
         console.log(Nome: ${user.name} | Email: ${user.email});
     });
 }
 buscarUsuarios();
 
-// 2. Renderizar Usuários na Tela (Botão carregar)
 async function carregarUsuarios() {
     const resposta = await fetch("https://jsonplaceholder.typicode.com/users");
     const usuarios = await resposta.json();
@@ -22,13 +21,13 @@ async function carregarUsuarios() {
     });
 }
 
-// 3. Buscar 3 Posts da API e exibir lado a lado
+// 3. 
 async function carregarPostsAPI() {
     const resposta = await fetch("https://jsonplaceholder.typicode.com/posts");
     const posts = await resposta.json();
     const container = document.getElementById("posts-api");
 
-    // slice(0, 3) pega apenas os 3 primeiros
+   
     posts.slice(0, 3).forEach(post => {
         container.innerHTML += `
             <div class="post-card">
@@ -40,7 +39,7 @@ async function carregarPostsAPI() {
 }
 carregarPostsAPI();
 
-// 4. Criar card de posts via formulário
+// 4. 
 function criarCardPost() {
     const titulo = document.getElementById("tituloPost").value;
     const texto = document.getElementById("textoPost").value;
@@ -60,7 +59,7 @@ function criarCardPost() {
 
     container.innerHTML += novoCard;
 
-    // Limpa os campos
+   
     document.getElementById("tituloPost").value = "";
     document.getElementById("textoPost").value = "";
 }
